@@ -1,30 +1,29 @@
 # portal_gun
 Green Portal
-2026-07-18 Green Portal Edition — A security-hardened, self-hosted VLESS proxy panel built for Cloudflare Workers.
+2026-07-18 Green Portal 
 
-What Changed From Zeus
-Security First: Removed all auto-update and external GitHub fetch vectors. No more silent code injection risks.
-Hardened Auth: Salted SHA-256 passwords, 8-character minimum, improved rate limiting (5 attempts / 30 min).
-Zero External Dependency: Removed GitHub IP rotation, proxy VIP lists, global message polling, and donation workers.
-Complete Rebrand: No traces of the old name. New identity, new colors, new feel.
-Premium UI: Dark green neon theme (#0a2f1f, #00ff9d) with a Rick and Morty inspired portal vortex.
-Prerequisites
 A Cloudflare account (free tier works).
 A D1 database created in your Cloudflare dashboard.
 (Optional) A Cloudflare API token for the password recovery feature or GraphQL usage stats.
+
 Deployment1. Create a D1 Database
 Go to Workers & Pages > D1 in the Cloudflare dashboard and create a new database (e.g., green-portal-db).
 
+
 Create a Worker
 Go to Workers & Pages > Create application > Create Worker. Give it a name (e.g., green-portal).
+
 
 Bind the Database
 In the Worker settings, go to Settings > Variables > Bindings and add a D1 Database binding:
 
 Variable name: DB
 Database: select your D1 database
+
 Upload the Code
-Replace the default worker code with the contents of _worker.js provided above. Click Save and Deploy.
+Replace the default worker code with the contents of _worker.js provided above.
+
+Click Save and Deploy.
 
 First Login
 Visit https://your-worker.your-subdomain.workers.dev/panel. You will be prompted to set an admin password.
